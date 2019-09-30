@@ -1,0 +1,74 @@
+#cuxiao{
+    margin: 30px auto;
+  margin-bottom: 10px;
+  width: 940px;
+  height: 353px;
+  position: relative;
+  /* overflow: hidden; */
+}
+#cprev,#cnext{
+  width: 45px;
+  height: 108px;
+  cursor: pointer;
+  background: rgba(0,0,0,0.6);
+  border-radius: 4px;
+  position: absolute;
+  top: 35%;
+}
+#cprev div,#cnext div{
+  width: 23px;
+  height: 36px;
+  background-image: url("../images/arrows.png");
+  margin: 36px auto;
+  opacity: .7;
+  transition: all .5s;
+}
+#cprev{
+  background: -webkit-linear-gradient( left, rgba( 0, 0, 0, 0.3) 5%,rgba( 0, 0, 0, 0) 95%);
+  left: -46px;
+}
+#cnext{
+  background: -webkit-linear-gradient( left, rgba( 0, 0, 0, 0) 5%,rgba( 0, 0, 0, 0.3) 95%);
+  right: -46px;
+}
+#cprev div{
+  background-position: -23px 0;
+}
+#cnext div{
+  background-position: 0 0;
+}
+#cprev:hover div,#cnext:hover div{
+  transform: scale(1.1);
+  opacity: 1;
+}
+#cprev:hover,#cnext:hover{
+  background-color: rgb(60, 84, 102);
+}
+.cbox_main{
+  height: 100%;
+  width: 304px;
+  background-image: url("https://store.steampowered.com/public/images/v6/home/background_spotlight.jpg");
+}
+.cbox_top img{
+  height: 100%;
+  width: 100%;
+}
+.cbox_top{
+  height:310px;
+  width:100%;
+}
+.cbox_bottom{
+  height:43px;
+  width:100%;
+}
+.cgamePrice{
+  padding: 0 10px;
+  color: #acdbf5;
+  font-size: 25px;
+  margin: 10px 35px;
+}
+
+.ca{
+    position: relative;
+    top: -361px;
+}

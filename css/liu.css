@@ -1,0 +1,84 @@
+#liulan{
+  margin: 30px auto;
+  margin-bottom: 10px;
+  width: 940px;
+  height: 353px;
+  position: relative;
+  /* overflow: hidden; */
+}
+.button_container{
+  width: 100%;
+  height:58px;
+
+}
+.a:focus {
+  outline: 0px none;
+}
+
+.btn_wrapper{
+    width: 226px;
+    height: 58px;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 56px;
+    color: #66c0f4;
+    text-align: center;
+    background-image: url('../images/background_spotlight.jpg');
+    background-position-y: -105px;
+    border-radius: 3px;
+    box-shadow: 0 0 7px 0 #000;
+}
+.btn_wrapper:hover{
+  background-position-y: -142px;
+  color: #fff;
+  cursor:pointer
+}
+
+.btn_wrapper_left{
+  margin-left: 12px;
+}
+.btn_wrapper a{
+  position: relative;
+
+}
+.lab {
+    width: 100%;
+    height: 148px;
+    position: relative;
+    top: 55px;
+}
+
+.labs_banner
+{
+  position: relative;
+  display: block;
+  height: 148px;
+}
+
+.labs_banner img.banner
+{
+  max-width: 100%;
+  display: block;
+}
+
+.labs_banner img.hover
+{
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.25s;
+
+  width: 100%;
+  height: 100%;
+}
+
+.labs_banner:hover img.hover
+{
+  opacity: 1.0;
+  display: block;
+}

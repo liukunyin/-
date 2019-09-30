@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户空间</title>
+    <link rel="icon" href="images/tb.ico" type="img/x-ico" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/reg.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="/live2d/css/live2d.css" />
+    <script src="js/jquery3.3.1.js"></script>
+  <script type="text/javascript">
+            function regCheck(){
+            var password = $("input[name='3']").val();
+            var checkpassword = $("input[name='4']").val();
+            if(password != checkpassword){
+                alert("两次输入的密码不相同！");
+                return false;
+            }
+        }
+  </script>
+</head>
+
+  <?php include'php/head.php'?>
+  <?php
+  //使用一个会话变量检查登录状态
+  if(isset($_SESSION['name'])){
+      echo '
+      <body style="background:url('.$_SESSION['backurl'].'); background-size: 100% 100%;">
+      <div class="main content" style="left: auto;background: rgb(32, 47, 66);padding-top: 18px;padding-left: 40px;padding-bottom: 20px;height: 370px;">
+      <h1>'.$_SESSION['nicheng'].'(uid:'.$_SESSION['id'].')的信息</h2>
+      <img src='.$_SESSION['imgurl'].' style="width: 200px;height: 200px;">
+      <form onsubmit="return regCheck()" action="php/change.php" method="POST" name="change">
+        <h2 style="position: absolute;bottom: 75px;">修改头像:<input class="inp" type="" name="0" style="left: -77px;position: relative;top: 35px;"placeholder="填写url"></h2>
+        <h2 style="position: absolute;left: 333px;top: 74px;">修改昵称:<input class="inp" type="" name="1"></h2>
+        <h2 style="position: absolute;left: 333px;top: 130px;">修改背景:<input class="inp" type="" name="2" placeholder="填写url"></h2>
+        <h2 style="position: absolute;left: 333px;top: 180px;">修改密码:<input class="inp" type="password" name="3"></h2>
+        <h2 style="position: absolute;left: 333px;top: 240px;">确认密码:<input class="inp" type="password" name="4"></h2>
+        <button type="submit" name="submit" style=" position: absolute;right: 100px;bottom: 40px;">保存信息</button>
+        <div id="landlord">
+            <div class="message" style="opacity:0"></div>
+            <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+            <div class="hide-button">隐藏</div>
+        </div>
+      </form>
+
+      </div>
+
+      ';
+  }else{
+  echo "<script>alert('请登录');setTimeout(function(){window.location.href='http://localhost/steam-master/login.html';},0);</script>";
+}
+  ?>
+  <?php include'php/foot.php'?>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://localhost/'
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/tia/model.json");
+</script>
+</body>
+</html>

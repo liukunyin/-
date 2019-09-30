@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="icon" href="images/tb.ico" type="img/x-ico" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/cuxiao_style.css">
+    <link rel="stylesheet" type="text/css" href="css/liu.css">
+    <link rel="stylesheet" type="text/css" href="css/reg.css">
+    <script src="js/jquery3.3.1.js"></script>
+    <script type="text/javascript" src="js/lunbo.js"></script>
+    <script type="text/javascript" src="js/youhui.js"></script>
+    <script type="text/javascript" src="js/fnSteam.js"></script>
+    <script type="text/javascript" src="js/fnSteam2.js"></script>
+    <script type="text/javascript" src="js/loaddata.js"></script>
+</head>
+<body>
+    <!--顶部-->
+    <?php include 'php/head.php';?>
+    <div class="main content" style="height: 514px;left: auto;">
+    <?php include 'php/daohang.php';?>
+        <div class="leftcol" style="height: 382px;">
+        <div class="leftcol_left fl">
+            <h2 class="chuangjian">登录</h2><br>
+            <span>到现有的Steam账户</span><br><br>
+            <span>Steam账户名称</span><br>
+
+            <form action="php/login.php" method="POST" id="login_form";>
+                <input type="text" name="name" class="inp" required="required"><br>
+                <span>密码</span><br>
+                <input type="password" name="password" class="inp" required="required">
+                <button type="submit" name ="submit" style="width: 77px;position: absolute;bottom: 12px;left: 0px;height: 27px;font-size: 13px;">
+                                <span>登录</span>
+                </button>
+            </form>
+            <br><br><a href="https://store.steampowered.com/about" style="position: relative;bottom: -180px;">忘记您的密码？</a>
+
+        </div>
+        <div style="border-left: 1px solid #264959;width: 2px;height: 210px;margin: 0 16px;float: left;position: absolute;top: 20px;left: 289px;"></div>
+        <div class="leftcol_right fl">
+            <h2 class="chuangjian">创建</h2><br>
+            <span>一个新的免费账户</span><br><br>
+            <span>欢迎免费加入及轻松使用。继续创建 Steam 帐户并获取 Steam - 适合 PC 和 Mac 玩家的前沿数字解决方案。</span><br>
+                    <a href="reg.html"><button style="width: 77px;position: absolute;bottom: 12px;left: 10px;height: 27px;font-size: 13px;">
+                                    <span>加入Steam</span>
+                    </button></a>
+        </div>
+
+        </div>
+        <div class="rightcol">
+            <div class="block">
+            <div class="block_content block_content_inner login">
+                    <h2>为什么加入 STEAM？</h2>
+                    <ul id="why_list">
+                        <li>购买和下载完整零售游戏</li>
+                        <li>加入 Steam 社区</li>
+                        <li>游戏时与好友聊天</li>
+                        <li>在任何电脑上都能玩</li>
+                        <li>安排游戏、比赛或 LAN 聚会</li>
+                        <li>获取自动游戏更新以及更多！</li>
+                    </ul>
+                    <br />
+                    <img src="https://store.st.dl.bscstorage.net/public/images/v6/why_join_preview.png" width="265" height="176" border="0" >
+                    <br><br>
+
+                <br>
+                <a href="https://store.steampowered.com/about" style="    position: relative;bottom: -24px;">了解更多 Steam 的相关信息</a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <?php include 'php/foot.php';?>
+</body>
+</html>

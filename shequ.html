@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>steam</title>
+    <link rel="icon" href="images/tb.ico" type="img/x-ico" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/reg.css">
+    <link rel="stylesheet" href="css/cuxiao_style.css">
+    <link rel="stylesheet" type="text/css" href="css/liu.css">
+    <script src="js/jquery3.3.1.js"></script>
+
+    <style type="text/css">
+        .liuyan_main{
+            width: 48%;
+            height: 150px;
+            background: rgb(32, 47, 66);
+            float: left;
+            margin-left: 13px;
+            margin-top: 13px;
+
+        }
+        .page{
+            width: 100%;
+            height: 100%;
+        }
+        .pdot{
+            position: relative;
+            bottom: 277px;
+            left: auto;
+            text-align: center;
+        }
+        .pdot span{
+            display: inline-block;
+            width: 20px;
+            height: 14px;
+            transition:background-color 0.2s;
+            background-color: hsla(202,60%,100%,0.2);
+            border-radius: 3px;
+            margin: 0 4px;
+            cursor: pointer;
+        }
+        .id_div span{
+            position: relative;
+            top: -20px;
+            color: #c1dbf4;
+            font-size: 13px;
+            font-family: "Motiva Sans", Sans-serif;
+            font-weight: bold;
+            left: 35px;
+        }
+        .date_div span{
+            margin: 0px 0px 8px;
+            font-size: 10px;
+            text-transform: uppercase;
+            font-style: normal;
+            color: #8091a2;
+            display: inline-block;
+            position: relative;
+            left: 10px;
+            top: 1px;
+            text-align: center;
+
+        }
+        .txt_div span{
+                margin-right: 8px;
+                font-family: "Motiva Sans", Sans-serif;
+                font-weight: normal;
+                font-size: 13px;
+                line-height: 17px;
+                color: #acb2b8;
+                overflow-wrap: break-word;
+                overflow: hidden;
+                position: relative;
+                top: 10px;
+                left: 10px;
+
+        }
+        .id_div{
+            background: rgb(22, 32, 45);
+            height: 25%;
+        }
+        .date_div{
+            height: 5%;
+        }
+        .txt_div{
+            height: 70%;
+            width: 95%;
+        }
+        .fa{
+            height: 179px;
+            width: 90%;
+            position: relative;
+            top: -258px;
+            left: 55px;
+        }
+        .ly_state{
+            width: 45px;
+            height: 26px;
+            position: absolute;
+            bottom: -35px;
+            left: 0px;
+        }
+
+        textarea{
+              background-color: rgba(0, 0, 0, 0.2);
+              color:#fff;
+              box-shadow: 1px 1px 0px #45556c;
+              border: 1px solid black;
+              border-radius:3px ;
+              padding: 5px;
+              margin: 4px 0;
+                width: 830px;
+                height: 155px;
+               resize:none;
+        }
+
+    </style>
+</head>
+<body>
+    <!--顶部-->
+    <?php include 'php/head.php';?>
+    <?php include 'php/liuyan.php';?>
+
+    <div class="main content" style="left: auto; height: 950px;">
+        <!-- 导航栏 -->
+        <?php include 'php/daohang.php';?>
+        <h2 style="margin-top: -20px">社区留言</h2>
+
+        <div class="pdot">
+
+        </div>
+        <div class="fa">
+                <script type="text/javascript">
+                    function enter(){
+                        alert("s");
+                    };
+                </script>
+                <form action="php/ly.php" method="POST" id="ly_form">
+                    <textarea οnkeydοwn="enter()" id="textareaText" type="submit" name="liuyan" placeholder="发表感想(小于200字)不要换行！不要换行！不要换行"></textarea>
+                    <?php
+                    //使用一个会话变量检查登录状态
+                    if(isset($_SESSION['name'])){
+                            echo '<div class="ly_state"><button type="submit" name="submit" style="width: auto;height: 25px;">发表</button></div>';
+                    }
+                    ?>
+                </form>
+                <?php
+                if(!isset($_SESSION['name'])){
+                        echo '<div class="ly_state"><a href="login.html"><button onclick="" style="width: 57px;height: 25px;">登录留言</button></a></div>';
+                    }
+                ?>
+                <div class="time" style="position: absolute;right: 5px;">
+                    <script type="text/javascript">
+                        var myDate = new Date();
+                        $(function(){
+                            setInterval("getTime();",1000); //每隔一秒运行一次
+                        })
+                        //取得系统当前时间
+                        function getTime(){
+                            var myDate = new Date();
+                            var date = myDate.toLocaleString();
+                            $(".time").html(date); //将值赋给div
+                        }
+                    </script>
+                </div>
+        </div>
+    </div>
+
+    <div id="p" class="page" style="display: none;">
+    <div id="lm" class="liuyan_main">
+        <div class="id_div"><img src="" class="pt" style="width: 30px;height: 30px;position: relative;top: 3px;display: none"><span class="id"></span></div>
+        <div class="date_div"><span class="date"></span></div>
+        <div class="txt_div"><span class="txt"></span></div>
+        <script type="text/javascript"></script>
+    </div>
+    </div>
+
+
+    <!-- Footer -->
+    <?php include 'php/foot.php';?>
+</body>
+</html>
